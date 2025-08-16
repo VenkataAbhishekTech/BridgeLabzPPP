@@ -12,7 +12,7 @@ public class CourseFeeDiscount {
         System.out.print("Enter discount percentage: ");
         int discountPercentage = src.nextInt();
 
-        double discount = (courseFee/discountPercentage)*100;
+        double discount = (courseFee*discountPercentage)/100;
         double discountAmount = courseFee-discount;
 
         System.out.println("The discount amount: " + discount);
