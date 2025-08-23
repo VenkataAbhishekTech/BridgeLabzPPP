@@ -1,0 +1,43 @@
+package Array;
+
+import java.util.Scanner;
+
+public class Copy2DTo1D {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of rows: ");
+        int rows = sc.nextInt();
+
+        int[][] matrix = new int[rows][rows];
+
+        System.out.println("Enter elements of the matrix:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < rows; j++) {
+                System.out.print("Element [" + i + "][" + j + "]: ");
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+        int[] array = new int[rows * rows];
+        int index = 0;
+    
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < rows; j++) {
+                array[index] = matrix[i][j];
+                index++;
+            }
+        }
+        System.out.println("\n2D Array (Matrix):");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < rows; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("\n1D Array:");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+
+        sc.close();
+    }
+}
