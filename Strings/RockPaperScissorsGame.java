@@ -72,5 +72,7 @@ public class RockPaperScissorsGame {
         displayStats(stats);
 
         System.out.println("\nNumber of Draws: " + draws);
+        sc.close();
+        
     }
 }
