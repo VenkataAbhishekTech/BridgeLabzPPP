@@ -1,4 +1,5 @@
-package Array;
+// ...existing code...
+package Array.Array1;
 
 import java.util.Scanner;
 

@@ -1,5 +1,4 @@
-package Array;
-
+package Array.Array1;
 import java.util.Scanner;
 
 public class FactorsArray {
