@@ -1,4 +1,4 @@
-package Methods;
+package Methods.Level1;
 
 import java.util.Scanner;
 
