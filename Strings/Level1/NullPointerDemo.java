@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Level1;
 
 public class NullPointerDemo {
     public static void generateException() {
