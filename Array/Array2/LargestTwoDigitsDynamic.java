@@ -1,8 +1,8 @@
-package Array;
+package Array.Array2;
 
 import java.util.Scanner;
 
-public class LargestTwoDigits {
+public class LargestTwoDigitsDynamic {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -15,14 +15,19 @@ public class LargestTwoDigits {
 
         while (number != 0) {
             int digit = number % 10;   
-            digits[index] = digit;     
-            index++;
-
             if (index == maxDigit) {
-                System.out.println("Max digit storage reached (10 digits). Extra digits ignored.");
-                break;
+                maxDigit += 10;
+                int[] temp = new int[maxDigit];
+
+                for (int i = 0; i < digits.length; i++) {
+                    temp[i] = digits[i];
+                }
+
+                digits = temp;
             }
 
+            digits[index] = digit; 
+            index++;
             number /= 10; 
         }
 
