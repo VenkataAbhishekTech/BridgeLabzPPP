@@ -49,5 +49,6 @@ public class CheckNumber {
         System.out.println("Is Spy? " + isSpy(number));
         System.out.println("Is Automorphic? " + isAutomorphic(number));
         System.out.println("Is Buzz? " + isBuzz(number));
+        sc.close();
     }
 }
