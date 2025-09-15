@@ -1,8 +1,8 @@
-package EncapsulationPolymorphismInterfaceAndAbstractClass;
+// Abstract class Employee
 abstract class Employee {
-    public int employeeId;
-    public String name;
-    public double baseSalary;
+    private int employeeId;
+    private String name;
+    private double baseSalary;
 
     public Employee(int employeeId, String name, double baseSalary) {
         this.employeeId = employeeId;
@@ -22,11 +22,13 @@ abstract class Employee {
     }
 }
 
+// Department interface
 interface Department {
     void assignDepartment(String deptName);
     String getDepartmentDetails();
 }
 
+// FullTimeEmployee subclass
 class FullTimeEmployee extends Employee implements Department {
     private String department;
     public FullTimeEmployee(int id, String name, double baseSalary) {
@@ -37,6 +39,7 @@ class FullTimeEmployee extends Employee implements Department {
     public String getDepartmentDetails() { return department; }
 }
 
+// PartTimeEmployee subclass
 class PartTimeEmployee extends Employee implements Department {
     private int hoursWorked;
     private double hourlyRate;
@@ -50,12 +53,16 @@ class PartTimeEmployee extends Employee implements Department {
     public void assignDepartment(String deptName) { this.department = deptName; }
     public String getDepartmentDetails() { return department; }
 }
+
+// Main class
 public class EmployeeManagementSystem {
     public static void main(String[] args) {
         Employee e1 = new FullTimeEmployee(1, "Alice", 50000);
         Employee e2 = new PartTimeEmployee(2, "Bob", 200, 40);
+
         ((Department)e1).assignDepartment("HR");
         ((Department)e2).assignDepartment("Finance");
+
         Employee[] employees = {e1, e2};
         for (Employee e : employees) {
             e.displayDetails();
